@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redux 範例</title>
+    <!-- redux script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.1.0/redux.min.js"></script>
+</head>
+
+<body>
+
+    <button type="button" id="decr">+</button>
+    <div id="count">0</div>
+    <button type="button" id="incr">-</button>
+
+</body>
+<script>
+    //1. 定義 reducer
+    const countReducer = (state = 0, action) => {
+        switch (action.type) {
+            case 'INCREMENT':
+                return state + 1;
+            case 'DECREMENT':
+                return state - 1;
+            default:
+                return state;
+        }
+    };
+
+    //2. 創建 store
+
+    const store = Redux.createStore(countReducer);
+
+    //3. 監聽 store
+    store.subscribe(() => {
+        console.log('state changed');
+    }
+    )
+
+    document.getElementById('incr').addEventListener('click', () => {
+        store.dispatch({ type: 'INCREMENT' });
+        document.getElementById('count').innerText = store.getState();
+    });
+
+    document.getElementById('decr').addEventListener('click', () => {
+        store.dispatch({ type: 'DECREMENT' });
+        document.getElementById('count').innerText = store.getState();
+    });
+
+
+</script>
+
+</html>
