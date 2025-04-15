@@ -1,30 +1,36 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-
-import { Provider } from 'react-redux'
-import store from './store/index.js'
-import './index.css'
-import App from './App.jsx'
-
+import App from './App'
 import { RouterProvider } from 'react-router-dom'
-import router from './router/index.jsx'
-/* 
-1.React Strict Mode:
-  在開發環境中，React 的 Strict Mode
-  會故意執行某些函數兩次，
-  包括 Component 的渲染和 useEffect 的回調函數。
-  這是 React 的設計，
-  目的是幫助開發者發現潛在的副作用問題。
-2.主要目的:
-  幫助發現不純的渲染
-  找出使用過時 API 的問題
-  確保清理函數正確實現
-*/
+// import router from './router/index.jsx'
+import { Provider } from 'react-redux'
+// import store from './store/index.js'
+import './index.css'
+import 'antd/dist/reset.css'
+
+import zhTW from 'antd/locale/zh_TW'
+import { ConfigProvider } from 'antd'
+import dayjs from 'dayjs'
+import 'dayjs/locale/zh-tw'
+
+dayjs.locale('zh-tw')
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <Provider store={store}> */}
-    <RouterProvider router={router} />
-    {/* <App /> */}
+    {/* <RouterProvider router={router} /> */}
+    <ConfigProvider
+      locale={zhTW}
+      theme={{
+        token: {
+          // 自定義主題設定
+          // colorPrimary: '#00b96b',
+        },
+      }}
+    >
+      <App />
+    </ConfigProvider>
+
     {/* </Provider> */}
   </StrictMode>,
 )
