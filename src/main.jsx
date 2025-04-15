@@ -7,7 +7,7 @@ import './index.css'
 import App from './App.jsx'
 
 import { RouterProvider } from 'react-router-dom'
-import router from './router/index'
+import router from './router/index.jsx'
 /* 
 1.React Strict Mode:
   在開發環境中，React 的 Strict Mode
@@ -21,10 +21,10 @@ import router from './router/index'
   確保清理函數正確實現
 */
 createRoot(document.getElementById('root')).render(
-  // <StrictMode>
-  // <Provider store={store}>
-  <RouterProvider router={router} />
-  //{ <App /> }
-  // </Provider>
-  // </StrictMode>,
+  <StrictMode>
+    {/* <Provider store={store}> */}
+    <RouterProvider router={router} />
+    {/* <App /> */}
+    {/* </Provider> */}
+  </StrictMode>,
 )

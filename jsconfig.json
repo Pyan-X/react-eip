@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "baseUrl": "./",
+        "paths": {
+            "@/*": ["src/*"]
+        },
+        "jsx": "react-jsx",
+        "strict": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true
+    },
+    "include": ["src", "vite.config.ts", "test/App_自定義Hook.jsx", "test/App_非同步狀態操作.jsx", "test/App_跨層傳遞數據.jsx", "test/App_redux操作.jsx", "test/App_useEffect使用.jsx"],
+    "exclude": ["node_modules", "**/*.spec.ts"]
+}

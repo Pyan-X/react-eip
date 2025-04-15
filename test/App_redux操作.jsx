@@ -1,7 +1,7 @@
 import './App.css'
 import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { increment, decrement, addNunber } from './store/modules/conterSotre'
+import { increment, decrement, addNunber } from '../src/store/modules/conterSotre'
 
 function App() {
   // 用戶使用 useSelector 來獲取 Redux store 中的狀態

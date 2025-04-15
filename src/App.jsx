@@ -6,8 +6,8 @@ function App() {
   return (
     <div>
       <h1>React Router</h1>
-      <Link to="/Home">Home</Link>
-      <Link to="/Login">Login</Link>
+      <Link to="/home">Home</Link>
+      <Link to="/login">Login</Link>
     </div>
   )
 }
